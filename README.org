@@ -6,7 +6,7 @@
 ** What are the dependencies?
    xrandr and mpv mostly (xwinwrap should be cloned)
 ** How to get it?
-   git clone --recurse-submodules https://github.com/technolapin/saw
+   ~git clone --recurse-submodules https://github.com/technolapin/saw~
    (so that you also get xwinwrap)
 ** How to build
   build xwinwrap (with make) so that the executable is in the xwinwrap/ folder (just call make while being in it, really)
