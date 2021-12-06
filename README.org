@@ -1,6 +1,6 @@
 * Smart Animated Wallpaper
 ** What is it?
-   Some really bad piece of code I tinkered together at 4 am instead of sleeping what uses xwinwrap and mpv to display media as wallpapers on linux (works at least on i3-wm)
+   Some really bad piece of code I tinkered together at 4 am instead of sleeping that uses xwinwrap and mpv to display media as wallpapers on linux (works at least on i3-wm)
 ** Is it a good idea?
    no
 ** What are the dependencies?
