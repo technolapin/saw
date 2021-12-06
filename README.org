@@ -1,0 +1,11 @@
+* Smart Animated Wallpaper
+** What is it?
+   Some really bad piece of code I tinkered together at 4 am instead of sleeping what uses xwinwrap and mpv to display media as wallpapers on linux (works at least on i3-wm)
+** Is it a good idea?
+   no
+** What are the dependencies?
+   xrandr and mpv mostly (xwinwrap should be cloned)
+** How to build
+  build xwinwrap (with make) so that the executable is in the xwinwrap/ folder (just call make while being in it, really)
+** How to use
+   ~python script.py <Path To Your gif/video/image/capybara>~
