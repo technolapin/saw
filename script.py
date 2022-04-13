@@ -2,6 +2,12 @@ import os
 import subprocess
 import sys
 
+
+saw_directory = os.path.dirname(os.path.realpath(__file__))
+print(sys.executable)
+print(os.path.realpath(__file__))
+print("SAW directory: " + saw_directory)
+
 url = sys.argv[1]
 # find screens and their dims
 # I use directly xrandr so that no unconvenient python dependencies are needed
@@ -21,13 +27,13 @@ print(screens)
 
 
 def make_cmd(dims):
-    return "./xwinwrap -g "+dims+" -ni -s -nf -b -un -ov -fdt -argb -- mpv --mute=yes --no-audio --no-osc --no-osd-bar --quiet --screen=0 --geometry="+dims+" -wid WID --loop " + url
+    return "." + saw_directory + "/xwinwrap/xwinwrap -g "+dims+" -ni -s -nf -b -un -ov -fdt -argb -- mpv --no-osc --no-osd-bar --quiet --screen=0 --geometry="+dims+" -wid WID --loop " + url
 
 zombies=[]
 for name, dims in screens:
     cmd = make_cmd(dims)
     print(cmd)
-    zom = subprocess.Popen(["sh", "single_screen.sh", dims, url])
+    zom = subprocess.Popen(["sh", saw_directory + "/single_screen.sh", dims, url])
     zombies.append(zom)
     
 for death in zombies:
