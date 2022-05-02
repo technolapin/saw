@@ -1,7 +1,11 @@
 import os
 import subprocess
 import sys
+import re
 
+#[W[%][xH[%]]][{+-}X[%]{+-}Y[%]] | [X[%]:Y[%]]
+
+re_geo = ".*[0-9]+.*"
 
 saw_directory = os.path.dirname(os.path.realpath(__file__))
 print(sys.executable)
@@ -20,9 +24,12 @@ for str_screen in output.split("\n"):
     else:
         splitted = str_screen.split()
         name = splitted[0]
-        dims = splitted[2]
+        for m in splitted[1:]:
+            if re.match(re_geo, m):
+                dims = m
+                break
         screens.append([name, dims])
-print(screens)
+print("Found screens: ", screens)
 
 
 
